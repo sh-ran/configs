@@ -1,0 +1,10 @@
+[general]
+[font]
+size = 11
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[window]
+opacity = 1.0

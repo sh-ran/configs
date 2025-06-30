@@ -1,0 +1,133 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "dock": "right"
+  },
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
+    },
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    },
+    "cargo": null
+  },
+  "minimap": {
+    "show": "always"
+  },
+  "icon_theme": "VSCode Icons (Dark)",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_family": "SFMono Nerd Font Mono",
+  "buffer_font_size": 14,
+  "theme": {
+    "mode": "system",
+    "light": "Neovim default accented dark",
+    "dark": "Andromeda Sans Syntax"
+  },
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "agent": {
+    "enabled": false,
+    "version": "2"
+  },
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "auto_indent_on_paste": true,
+      "enable_language_server": true,
+      "language_servers": ["pylsp", "ruff"],
+      "use_autoclose": true,
+      "remove_trailing_whitespace_on_save": true,
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": { "name": "ruff" }
+        },
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true,
+            "source.organizeImports.ruff": true
+          }
+        }
+      ]
+    },
+    "JavaScript": {
+      "tab_size": 2,
+      "formatter": "prettier",
+      "format_on_save": "on"
+    },
+    "C": {
+      "tab_size": 2,
+      "use_autoclose": true,
+      "remove_trailing_whitespace_on_save": true,
+      "formatter": "language_server",
+      "enable_language_server": true,
+      "format_on_save": "on"
+    },
+    "C++": {
+      "tab_size": 2,
+      "use_autoclose": true,
+      "remove_trailing_whitespace_on_save": true,
+      "formatter": "language_server",
+      "enable_language_server": true,
+      "format_on_save": "on"
+    }
+  },
+  "file_types": {
+    "C++": ["c"]
+  },
+  "lsp": {
+    "pylsp": {
+      "settings": {
+        "plugins": {
+          // disable plugins superseded by ruff
+          // "autopep8": { "enabled": false },
+          // "black": { "enabled": false },
+          // "flake8": { "enabled": false },
+          // "isort": { "enabled": false },
+          // "mccabe": { "enabled": false },
+          // "pycodestyle": { "enabled": false },
+          // "pydocstyle": { "enabled": false },
+          // "pyflakes": { "enabled": false },
+          // "pylint": { "enabled": false },
+          // "yapf": { "enabled": false },
+
+          // keep the others
+          "jedi": { "enabled": true }
+
+          // disable pylsp ruff in favor of `ruff server`
+          // "ruff": { "enabled": false }
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "configurationPreference": "filesystemFirst",
+          "configuration": {
+            "format": {
+              "quote-style": "double",
+              "skip-magic-trailing-comma": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
