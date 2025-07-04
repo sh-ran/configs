@@ -4,7 +4,7 @@ This repo maintains both my configs for my i3 and hyprland setup.
 
 - Alacritty is my go to terminal emulator. It just works out of the box for me and needs minimal configuration.
 - Backgrounds has all my wallpapers that I use regularly.
-- Dunst is a notification daemon for my i3 setup which uses xorg.
+- Dunst is a notification daemon for my i3 setup.
 - Hypr contains all my configs for hyprland setup.
 - i3 contains all my configs for my i3 setup.
 - i3status is configured to show basic stuff that I need.
