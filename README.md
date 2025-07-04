@@ -11,9 +11,9 @@ This repo maintains both my configs for my i3 and hyprland setup.
 - kitty why kitty? I tried. It was not for me.
 - nvim has all my nvim configs although I normally use code. Will be moving to nvim soon tho.
 - picom configured to make my i3/xorg setup look a bit good.
-- polybar for my i3 setup.
-- rofi for both my i3 and hyprland setups.
-- tmux dont use it that much, but configured idk why.
+- polybar for my i3 setup when I am bored of i3status.
+- rofi menu launcher for both my i3 and hyprland setups.
+- tmux I dont use it that much, but its configured idk why.
 - waybar small changes to theprimeagen's waybar config. (too lazy to make my own and his looked cool anyway. Sue me)
 - zed configured but I dont use zed. Just keeping a copy of the settings for the future.
 - Xmodmap to change my `CAPS` to `ctrl` in my i3 setup.
