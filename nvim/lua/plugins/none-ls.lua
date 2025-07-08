@@ -12,8 +12,11 @@ return {
         -- null_ls.builtins.completion.spell,
         require("none-ls.diagnostics.eslint"),
         null_ls.builtins.formatting.prettierd,
-        null_ls.builtins.formatting.black,
+        -- null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
+        null_ls.builtins.formatting.gofumpt,
+        null_ls.builtins.formatting.goimports_reviser,
+        null_ls.builtins.formatting.golines,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

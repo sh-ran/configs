@@ -13,10 +13,4 @@ return {
       })
     end,
   },
-  -- {
-  --   "tanvirtin/monokai.nvim",
-  --   config = function()
-  --     require("monokai").setup({ italics = true })
-  --   end,
-  -- },
 }
