@@ -1,0 +1,6 @@
+font-family = BlexMono Nerd Font Propo SemiBold
+background = 1c2021
+theme = "ayu"
+window-decoration = none
+cursor-style = "block"
+shell-integration-features = no-cursor

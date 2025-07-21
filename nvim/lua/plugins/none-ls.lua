@@ -10,13 +10,12 @@ return {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.clang_format,
         -- null_ls.builtins.completion.spell,
-        require("none-ls.diagnostics.eslint"),
         null_ls.builtins.formatting.prettierd,
-        -- null_ls.builtins.formatting.black,
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.gofumpt,
         null_ls.builtins.formatting.goimports_reviser,
         null_ls.builtins.formatting.golines,
+        null_ls.builtins.formatting.asmfmt,
       },
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

@@ -13,4 +13,12 @@ return {
       })
     end,
   },
+  {
+    "ayu-theme/ayu-vim",
+    -- config = function()
+    --   require("ayu").setup({
+    --     ayucolor = "dark",
+    --   })
+    -- end,
+  },
 }
