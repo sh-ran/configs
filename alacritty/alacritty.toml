@@ -1,0 +1,10 @@
+[general]
+[font]
+size = 11
+
+[font.normal]
+family = "Hack Nerd Font Propo"
+style = "SemiBold"
+
+[window]
+opacity = 1.0
