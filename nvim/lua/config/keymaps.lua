@@ -21,11 +21,21 @@ km.set("n", "<leader>cj", require("fzf-lua").lsp_definitions, { desc = "Jump to 
 km.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Buffers" })
 
 km.set("n", "<leader>cl", function()
-  vim.diagnostic.open_float(0, { scope = "line" })
+	vim.diagnostic.open_float(0, { scope = "line" })
 end, { desc = "Line Diagnostics" })
 
 -- km.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 -- km.set("n", "<leader>gs", ":Neotree git_status reveal float<CR>", {})
 -- km.set("n", "<leader>b", ":Neotree buffers reveal float<CR>", {})
---
-km.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent dir" })
+
+-- Neotree
+km.set("n", "-", "<CMD>Neotree position=right<CR>", { desc = "Open parent dir" })
+km.set("n", "<leader>-", "<CMD>Neotree close<CR>", { desc = "Open parent dir" })
+
+-- ToggleTerm spwan
+km.set("n", "<leader>th", "<CMD>ToggleTerm direction=horizontal<CR>", { desc = "Open parent dir" })
+km.set("n", "<leader>tf", "<CMD>ToggleTerm direction=float<CR>", { desc = "Open parent dir" })
+
+-- ToggleTerm exit keybinds
+km.set("t", "<esc>", [[<C-\><C-n>]], opts)
+km.set("n", "<leader>tk", [[<C-\><C-n><C-W>k]], opts)

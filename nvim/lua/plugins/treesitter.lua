@@ -6,13 +6,10 @@ return {
 		config.setup({
 			ensure_installed = {
 				"c",
-				"cpp",
 				"python",
-				"javascript",
-				"typescript",
 				"vimdoc",
-				"markdown",
-				"markdown_inline",
+				"rust",
+				"go",
 			},
 			auto_install = true,
 			sync_install = false,
