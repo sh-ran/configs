@@ -1,0 +1,9 @@
+font-family = GeistMono Nerd Font Mono
+font-style = SemiBold
+background = 1a1a1a
+window-decoration = none
+shell-integration = zsh
+cursor-style = "block"
+shell-integration-features = no-cursor
+confirm-close-surface = false
+theme = TokyoNight Night
