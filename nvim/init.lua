@@ -13,3 +13,4 @@ vim.cmd("let g:rustfmt_autosave=1")
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.writebackup = false
+vim.cmd("set pumheight=15")
