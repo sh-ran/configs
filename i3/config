@@ -27,6 +27,10 @@ exec --no-startup-id dunst
 
 exec_always "setxkbmap -layout us -option ctrl:nocaps"
 
+exec xrandr --output HDMI-A-0 --rotate right
+exec xrandr --output DisplayPort-0 --mode 1920x1080 --rate 179.98
+exec xinput set-prop "9" "libinput Tapping Enabled" 1
+
 #start dmenu
 bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
 
@@ -72,7 +76,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # start a terminal
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill

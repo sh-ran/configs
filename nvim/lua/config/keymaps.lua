@@ -29,13 +29,13 @@ end, { desc = "Line Diagnostics" })
 -- km.set("n", "<leader>b", ":Neotree buffers reveal float<CR>", {})
 
 -- Neotree
-km.set("n", "-", "<CMD>Neotree position=right<CR>", { desc = "Open parent dir" })
-km.set("n", "<leader>-", "<CMD>Neotree close<CR>", { desc = "Open parent dir" })
-
--- ToggleTerm spwan
-km.set("n", "<leader>th", "<CMD>ToggleTerm direction=horizontal<CR>", { desc = "Open parent dir" })
-km.set("n", "<leader>tf", "<CMD>ToggleTerm direction=float<CR>", { desc = "Open parent dir" })
-
--- ToggleTerm exit keybinds
-km.set("t", "<esc>", [[<C-\><C-n>]], opts)
-km.set("n", "<leader>tk", [[<C-\><C-n><C-W>k]], opts)
+km.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent dir" })
+-- km.set("n", "<leader>-", "<CMD>Neotree close<CR>", { desc = "Open parent dir" })
+--
+-- -- ToggleTerm spwan
+-- km.set("n", "<leader>th", "<CMD>ToggleTerm direction=horizontal<CR>", { desc = "Open parent dir" })
+-- km.set("n", "<leader>tf", "<CMD>ToggleTerm direction=float<CR>", { desc = "Open parent dir" })
+--
+-- -- ToggleTerm exit keybinds
+-- km.set("t", "<esc>", [[<C-\><C-n>]], opts)
+-- km.set("n", "<leader>tk", [[<C-\><C-n><C-W>k]], opts)
