@@ -13,12 +13,10 @@ return {
       auto_install = true,
       ensure_installed = {
         "clangd",
-        "dockerls",
         -- "gopls",
         "lua_ls",
         "rust_analyzer",
-        "ts_ls",
-        "ty",
+        "pyright",
       },
     },
   },
@@ -38,20 +36,20 @@ return {
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.diagnostic.config({
-        underline = false,
-        virtual_text = false,
-        update_in_insert = false,
-        severity_sort = true,
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
-            [vim.diagnostic.severity.HINT] = " ",
-            [vim.diagnostic.severity.INFO] = " ",
-          },
-        },
-      })
+      -- vim.diagnostic.config({
+      --   underline = false,
+      --   virtual_text = false,
+      --   update_in_insert = false,
+      --   severity_sort = true,
+      --   signs = {
+      --     text = {
+      --       [vim.diagnostic.severity.ERROR] = " ",
+      --       [vim.diagnostic.severity.WARN] = " ",
+      --       [vim.diagnostic.severity.HINT] = " ",
+      --       [vim.diagnostic.severity.INFO] = " ",
+      --     },
+      --   },
+      -- })
 
       -- vim.lsp.handlers["textDocument/publishDiagnostics"] =
       --     vim.lsp.buf.diagnostic.on_publish_diagnostics,
