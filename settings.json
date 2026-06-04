@@ -1,41 +1,116 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // Docks
+  "collaboration_panel": {
+    "button": false,
+  },
+  "terminal": {
+    "dock": "bottom",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
   "project_panel": {
     "dock": "right",
   },
-  "buffer_font_family": "Fira Mono",
+  "minimap": {
+    "show": "always",
+    "current_line_highlight": "line",
+  },
+
+  // Autosave settings
+  "autosave": "on_focus_change",
+
+  // Disable AI
   "disable_ai": true,
-  "icon_theme": "Material Icon Theme",
+
+  // vim mode
+  "vim_mode": true,
+
+  // Font and Icon settings
+  "buffer_font_family": "Maple Mono NF",
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+
+  // Session settings
   "session": {
     "trust_all_worktrees": true,
   },
-  "vim_mode": true,
-  "ui_font_size": 17,
-  "buffer_font_size": 15,
+
+  // Telemetry
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // Theme settings
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
     "dark": "Ayu Dark",
   },
+
+  // Inlay hints
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_value_hints": true,
+  },
+
+  // Auto close settings
+  "use_autoclose": true,
+  "use_auto_surround": true,
+
+  // Diagnostics settings
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": "warning",
+    },
+  },
+
+  // Git Settings
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+      "show_commit_summary": true,
+    },
+    "blame": {
+      "show_avatar": false,
+    },
+  },
+
+  //Search Settings
+  "search": {
+    "button": true,
+    "whole_word": false,
+    "case_sensitive": false,
+    "include_ignored": false,
+    "regex": true,
+    "center_on_match": false,
+  },
+
+  // Language Settings and LSP Settings
+  "semantic_tokens": "combined",
   "languages": {
     "Python": {
-      "language_servers": ["ty", "!basedpyright", "..."],
+      "language_servers": ["basedpyright"],
       "format_on_save": "on",
-      "use_autoclose": true,
       "enable_language_server": true,
-      "use_auto_surround": true,
       "tab_size": 4,
-      "inlay_hints": {
-        "enabled": true,
-        "show_background": true,
-        "show_other_hints": true,
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
       },
     },
     "C": {
@@ -43,80 +118,19 @@
       "tab_size": 2,
       "auto_indent": "syntax_aware",
       "enable_language_server": true,
-      "use_autoclose": true,
-      "use_auto_surround": true,
-      "inlay_hints": {
-        "enabled": true,
-        "show_background": true,
-        "show_other_hints": false,
-      },
     },
     "Rust": {
       "format_on_save": "on",
       "tab_size": 2,
       "auto_indent": "syntax_aware",
       "enable_language_server": true,
-      "use_autoclose": true,
-      "use_auto_surround": true,
-      "inlay_hints": {
-        "enabled": true,
-        "show_background": true,
-        "show_other_hints": false,
-      },
     },
   },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
-        "completion": {
-          "snippets": {
-            "custom": {
-              "Arc::new": {
-                "postfix": "arc",
-                "body": ["Arc::new(${receiver})"],
-                "requires": "std::sync::Arc",
-                "scope": "expr",
-              },
-              "Some": {
-                "postfix": "some",
-                "body": ["Some(${receiver})"],
-                "scope": "expr",
-              },
-              "Ok": {
-                "postfix": "ok",
-                "body": ["Ok(${receiver})"],
-                "scope": "expr",
-              },
-              "Rc::new": {
-                "postfix": "rc",
-                "body": ["Rc::new(${receiver})"],
-                "requires": "std::rc::Rc",
-                "scope": "expr",
-              },
-              "Box::pin": {
-                "postfix": "boxpin",
-                "body": ["Box::pin(${receiver})"],
-                "requires": "std::boxed::Box",
-                "scope": "expr",
-              },
-              "vec!": {
-                "postfix": "vec",
-                "body": ["vec![${receiver}]"],
-                "description": "vec![]",
-                "scope": "expr",
-              },
-            },
-          },
-        },
-        "inlayHints": {
-          "maxLength": null,
-          "lifetimeElisionHints": {
-            "enable": "skip_trivial",
-            "useParameterNames": true,
-          },
-          "closureReturnTypeHints": {
-            "enable": "always",
-          },
+        "check": {
+          "command": "clippy",
         },
       },
     },
