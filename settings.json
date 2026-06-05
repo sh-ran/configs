@@ -17,6 +17,14 @@
     "current_line_highlight": "line",
   },
 
+  // Title bar Settings
+  "title_bar": {
+    "show_sign_in": false,
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_user_menu": true,
+  },
+
   // Autosave settings
   "autosave": "on_focus_change",
 
@@ -104,7 +112,7 @@
   "semantic_tokens": "combined",
   "languages": {
     "Python": {
-      "language_servers": ["basedpyright"],
+      "language_servers": ["basedpyright", "ruff"],
       "format_on_save": "on",
       "enable_language_server": true,
       "tab_size": 4,
@@ -131,6 +139,11 @@
     },
   },
   "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": { "configuration": "./pyproject.toml" },
+      },
+    },
     "rust-analyzer": {
       "initialization_options": {
         "check": {
