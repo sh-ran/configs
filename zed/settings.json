@@ -1,0 +1,180 @@
+{
+  // Docks
+  "collaboration_panel": {
+    "button": false,
+  },
+  "terminal": {
+    "dock": "bottom",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "right",
+  },
+  "minimap": {
+    "show": "always",
+    "current_line_highlight": "line",
+  },
+
+  // Title bar Settings
+  "title_bar": {
+    "show_sign_in": false,
+    "show_onboarding_banner": false,
+    "show_user_picture": false,
+    "show_user_menu": true,
+  },
+
+  // Autosave settings
+  "autosave": "on_focus_change",
+
+  // Disable AI
+  "disable_ai": true,
+
+  // vim mode
+  "vim_mode": true,
+
+  // Font and Icon settings
+  "buffer_font_family": "Maple Mono NF",
+  // "buffer_font_family": "Monaspace Neon NF",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Colored Zed Icons Theme Dark",
+    "dark": "Colored Zed Icons Theme Dark",
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+
+  // Session settings
+  "session": {
+    "trust_all_worktrees": true,
+  },
+
+  // Telemetry
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // Theme settings
+  "theme": {
+    "mode": "dark",
+    "light": "Onyx Light",
+    "dark": "Onyx Dark",
+  },
+
+  // Inlay hints
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "show_value_hints": true,
+  },
+  "use_autoclose": true,
+  "use_auto_surround": true,
+
+  // Diagnostics settings
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": "warning",
+    },
+  },
+  "code_lens": "on",
+
+  // Git Settings
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+      "show_commit_summary": true,
+    },
+    "blame": {
+      "show_avatar": false,
+    },
+  },
+
+  //Search Settings
+  "search": {
+    "button": true,
+    "whole_word": false,
+    "case_sensitive": false,
+    "include_ignored": false,
+    "regex": true,
+    "center_on_match": false,
+  },
+
+  // Language Settings and LSP Settings
+  "file_types": {
+    "C": ["C", "H"],
+    "C++": ["CPP", "HPP"],
+  },
+  "semantic_tokens": "combined",
+  "languages": {
+    "Python": {
+      "language_servers": ["basedpyright", "ruff"],
+      "format_on_save": "on",
+      "enable_language_server": true,
+      "tab_size": 4,
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
+      },
+    },
+    "C": {
+      "format_on_save": "on",
+      "language_servers": ["clangd"],
+      "tab_size": 2,
+      "auto_indent": "syntax_aware",
+      "enable_language_server": true,
+    },
+    "Rust": {
+      "format_on_save": "on",
+      "tab_size": 2,
+      "auto_indent": "syntax_aware",
+      "enable_language_server": true,
+    },
+    "Go": {
+      "language_servers": ["gopls"],
+      "format_on_save": "on",
+      "tab_size": 2,
+      "auto_indent": "syntax_aware",
+      "enable_language_server": true,
+    },
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": { "configuration": "./pyproject.toml" },
+      },
+    },
+    "gopls": {
+      "initialization_options": {
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true,
+        },
+      },
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+      },
+    },
+  },
+}
