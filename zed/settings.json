@@ -17,6 +17,9 @@
     "current_line_highlight": "line",
   },
 
+  "cursor_shape": "block",
+  "cursor_blink": false,
+
   // Title bar Settings
   "title_bar": {
     "show_sign_in": false,
