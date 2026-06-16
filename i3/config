@@ -24,14 +24,24 @@ bindsym $mod+m exec firefox
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id picom -b
 exec --no-startup-id dunst
+exec --no-startup-id lxpolkit
 
+exec_always --no-startup-id ~/.screenlayout/dual_monitor.sh
 exec_always "setxkbmap -layout us -option ctrl:nocaps"
+exec --no-startup-id xsetroot -solid black
+
+# Prevent from sleep
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
 
 # exec xrandr --output HDMI-A-0 --rotate right
-# exec xrandr --output eDP-1 --off
-# exec xrandr --output DP-1 --mode 1920x1080 --rate 179.98
-# exec xinput set-prop "9" "libinput Tapping Enabled" 1
-exec_always --no-startup-id xrandr --output eDP-1 --off --output DP-1 --mode 1920x1080 --rate 179.98
+# exec xrandr --output eDP --off
+# exec xrandr --output DisplayPort-0 --mode 1920x1080 --rate 179.98
+# exec_always --no-startup-id xrandr --output eDP --on --output DisplayPort-0 --mode 1920x1080 --rate 179.98
+
+# Polybar
+exec_always --no-startup-id "~/.config/polybar/launch.sh"
 
 #start dmenu
 bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
@@ -40,10 +50,10 @@ bindsym $mod+space exec --no-startup-id j4-dmenu-desktop
 bindsym $mod+n exec nautilus
 
 #wallpaper
-exec_always feh --bg-scale ~/.config/backgrounds/n2ebqg5qjkse1.png
+exec_always feh --bg-scale ~/.config/wallpapers/f0mpjw4ddzv41.png
 
 # Start VS Code
-bindsym $mod+c exec codium
+bindsym $mod+c exec code
 
 #screengrab
 bindsym $mod+shift+u exec screengrab
@@ -51,12 +61,15 @@ bindsym $mod+shift+u exec screengrab
 #Autotiling
 exec_always --no-startup-id autotiling
 
+#Lock screen
+bindsym $mod+shift+n exec i3lock -c 102030
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 102030 --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -69,8 +82,8 @@ exec --no-startup-id XDG_MENU_PREFIX=arch- kbuildsycoca6 --noincremental
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -197,6 +210,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+# bar {
+#         status_command polybar
+# }

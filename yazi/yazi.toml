@@ -1,0 +1,14 @@
+[mgr]
+# show_hidden = true
+ratio = [2, 3, 3]
+sort = "alphabetical"
+sort_sensitive = false
+sort_dir_first = false
+
+[preview]
+wrap = "yes"
+
+[opener]
+play = [ { run = "vlc %s", orphan = true, for = "linux" } ]
+edit = [ { run = "nvim %s", block = true, for = "linux" } ]
+open = [ { run = "xdg-open %s1", desc = "Open" } ]
