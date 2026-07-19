@@ -8,3 +8,4 @@
     - fast-syntax-highlighting
     - zsh-autosuggestions
     - zsh-completions
+    - powerlevel10k
