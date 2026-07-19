@@ -12,11 +12,12 @@ return {
     opts = {
       auto_install = true,
       ensure_installed = {
-        "clangd",
+        -- "clangd",
         -- "gopls",
         "lua_ls",
         "rust_analyzer",
         "pyright",
+        -- "asm_lsp",
       },
     },
   },

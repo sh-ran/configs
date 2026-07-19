@@ -9,7 +9,7 @@ return {
         "python",
         "vimdoc",
         "rust",
-        "go",
+        -- "go",
       },
       auto_install = true,
       sync_install = false,
