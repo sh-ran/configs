@@ -1,16 +1,10 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = "master",
+  branch = "master",
+  build = ":TSUpdate",
   config = function()
-    local config = require("nvim-treesitter")
-    config.setup({
-      ensure_installed = {
-        "c",
-        "python",
-        "vimdoc",
-        "rust",
-        -- "go",
-      },
+    require("nvim-treesitter").setup({
+      ensure_installed = { "c", "python", "vimdoc", "rust" },
       auto_install = true,
       sync_install = false,
       highlight = { enable = true },
