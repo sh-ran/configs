@@ -19,6 +19,7 @@ alias c='clear'
 alias rmr='rm -r'
 alias dnf='sudo dnf'
 alias lsa='ls -al'
+alias aa='tmux a'
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' group-name ''
