@@ -1,7 +1,8 @@
 [general]
+import = ["rose-pine.toml"]
 [font]
-size=11
+size=12
 
 [font.normal]
-family="SF Mono"
-style="Semibold"
+family="Monolisa Nerd Font"
+style="Medium"

@@ -1,30 +1,29 @@
 local km = vim.keymap
+local fzf = require("fzf-lua")
 
-km.set("n", "<leader>p", require("fzf-lua").files, { desc = "FZF Files" })
+-- Core pickers
+km.set("n", "<C-p>", fzf.files, { desc = "Find Files" })
+km.set("n", "<leader>fg", fzf.live_grep, { desc = "Live Grep" })
+km.set("n", "<leader>fw", fzf.grep_cword, { desc = "Grep Word Under Cursor" })
+km.set("v", "<leader>fs", fzf.grep_visual, { desc = "Grep Selection" })
+km.set("n", "<leader>fb", fzf.buffers, { desc = "Buffers" })
+km.set("n", "<leader>fo", fzf.oldfiles, { desc = "Recent Files" })
+km.set("n", "<leader>fh", fzf.helptags, { desc = "Help Tags" })
 
-km.set("n", "<leader><leader>", require("fzf-lua").resume, { desc = "FZF Resume" })
+-- Utility pickers
+km.set("n", "<leader>fm", fzf.marks, { desc = "Marks" })
+km.set("n", "<leader>fk", fzf.keymaps, { desc = "Keymaps" })
+km.set("n", "<leader><leader>", fzf.resume, { desc = "Resume Last Picker" })
 
--- km.set("n", "<leader>r", require("fzf-lua").registers, { desc = "Registers" })
+-- LSP (via fzf-lua)
+km.set("n", "<leader>fd", fzf.lsp_definitions, { desc = "Definitions" })
+km.set("n", "<leader>fr", fzf.lsp_references, { desc = "References" })
+km.set("n", "<leader>fs", fzf.lsp_document_symbols, { desc = "Document Symbols" })
 
-km.set("n", "<leader>m", require("fzf-lua").marks, { desc = "Marks" })
-
-km.set("n", "<leader>k", require("fzf-lua").keymaps, { desc = "Keymaps" })
-
-km.set("n", "<leader>f", require("fzf-lua").live_grep, { desc = "FZF Grep" })
-
-km.set("v", "<leader>8", require("fzf-lua").grep_visual, { desc = "FZF Selection" })
-
-km.set("n", "<leader>7", require("fzf-lua").grep_cword, { desc = "FZF Word" })
-
-km.set("n", "<leader>cj", require("fzf-lua").lsp_definitions, { desc = "Jump to Definition" })
-
-km.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Buffers" })
-
+-- Diagnostics
 km.set("n", "<leader>cl", function()
   vim.diagnostic.open_float(0, { scope = "line" })
 end, { desc = "Line Diagnostics" })
 
-
 -- Neotree
-km.set("n", "<C-n>", ":Neotree filesystem reveal right<CR>", {})
--- km.set("n", "<leader>-", "<CMD>Neotree close<CR>", { desc = "Open parent dir" })
+km.set("n", "<C-n>", ":Neotree filesystem reveal right<CR>", { desc = "Toggle File Tree" })
