@@ -31,9 +31,18 @@
   },
   "sway/workspaces": {
     "format": "{name}: {icon}",
+    "disable-scroll": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    },
     "format-icons": {
       "focused": "",
-      "default": ""}
+      "default": ""
+    }
   },
   "tray": {
     "icon-size": 15,
@@ -57,7 +66,7 @@
       "on-discharging": "notify-send -u normal 'Power Switch' Discharging",
       "on-charging": "notify-send -u normal 'Power Switch' Charging'"
     },
-    "format": "{capacity}% {icon}",
+    "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25
 },
