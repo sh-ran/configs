@@ -13,3 +13,4 @@ ripgrep
 zsh
 zed
 kanshi
+lxpolkit
