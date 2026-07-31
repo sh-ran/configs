@@ -11,8 +11,24 @@
     "battery",
     "cpu",
     "memory",
+    "custom/notification",
     "tray"
   ],
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": ""
+    },
+    "return-type": "json",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  },
   "sway/workspaces": {
     "format": "{name}: {icon}",
     "format-icons": {
@@ -26,8 +42,25 @@
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%d - %I:%M %p}"
+    "format": "{:%d/%m/%Y - %I:%M %p}"
   },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+      "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+      "on-charging-100": "notify-send -u normal 'Battery Full!'",
+      "on-discharging": "notify-send -u normal 'Power Switch' Discharging",
+      "on-charging": "notify-send -u normal 'Power Switch' Charging'"
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+},
   "network": {
     "format-wifi": "󰤢 ",
     "format-ethernet": "󰈀 ",
@@ -51,10 +84,9 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
       "default": ["", "", " "]    
     },
-    "on-click": "pavucontrol"
   }
 }

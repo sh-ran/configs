@@ -14,9 +14,7 @@ input type:pointer {
     pointer_accel 0.0
 }
 
-output DP-1 mode 1920x1080@179.982Hz
-output eDP-1 disable
-
+exec_always autotiling
 exec --no-startup-id dex --autostart --environment sway
 exec --no-startup-id kanshi
 
@@ -34,8 +32,6 @@ exec --no-startup-id xset s noblank
 bindsym $mod+space exec j4-dmenu-desktop
 
 bindsym $mod+n exec nautilus
-
-exec_always --no-startup-id autotiling
 
 bindsym $mod+shift+n exec swaylock -c 102030
 

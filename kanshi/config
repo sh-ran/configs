@@ -1,0 +1,11 @@
+# Turn off laptop screen when docked
+profile docked {
+    output eDP-1 disable
+    output DP-1 enable mode 1920x1080@179.982Hz position 0,0
+}
+
+# Standalone laptop setup
+profile undocked {
+    output eDP-1 enable mode 1920x1200@60Hz position 0,0
+}
+
